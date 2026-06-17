@@ -1,0 +1,6 @@
+Adrián Mateos,España,Hombre,32,8,13,2,0,10000000,-500000,WPT,23
+Juan Maceiras,España,Hombre,37,13,8,2,0,0,-500000,WPT,23
+Adrián Mateos,España,Hombre,32,1,0,1,0,250000,-5000,EPT,2
+Juan Pastor,España,Hombre,52,0,1,1,0,0,-5000,EPT,2
+Adrián Mateos,España,Hombre,32,5,7,0,0,1000000,-10000,WSOP,12
+Raúl Martínez,España,Hombre,44,7,5,0,0,0,-10000,WSOP,12

@@ -103,6 +103,7 @@ public class PokerData {
 		int fichasB = torneo.getInitialPoints();
 		int pozoTotal = 0;
 		int rondasN = 0;
+		int ciegaGrande=0;
 		eraseScores();
 		marcadorA.subMoneyLost(torneo.getEntryCost());
 		marcadorB.subMoneyLost(torneo.getEntryCost());
@@ -128,6 +129,10 @@ public class PokerData {
 			//
 			pozoTotal=0;
 			controlPoker=0;
+			ciegaGrande=1000;
+			pozoTotal=2*ciegaGrande;
+			fichasA-=ciegaGrande;
+			fichasB-=ciegaGrande;
 			//
 			MegaDash.mostrarBarres();
 			System.out.println("Ronda 1 - Pozo: "+pozoTotal);
@@ -209,8 +214,8 @@ public class PokerData {
 				break;
 			}
 			case 6: {
-				System.out.println("Program 6 - descarta");
-				controlPoker=50;
+				System.out.println("Program 6 - pasa");
+				
 
 
 
@@ -295,8 +300,8 @@ public class PokerData {
 					break;
 				}
 				case 6: {
-					System.out.println("Program 6 - descarta");
-					controlPoker=50;
+					System.out.println("Program 6 - pasa");
+					
 
 
 
@@ -381,8 +386,7 @@ public class PokerData {
 					break;
 				}
 				case 6: {
-					System.out.println("Program 6 - descarta");
-					controlPoker=50;
+					System.out.println("Program 6 - pasa");
 
 
 
@@ -435,7 +439,7 @@ public class PokerData {
 			System.out.println("\033[0m");
 		}
 		//acaba bucle 
-		
+		System.out.println("\033[32m");
 		if(fichasA>fichasB) {
 			System.out.println("gana el torneo " + torneo.getNombre() + " "+ marcadorA.getJugador().getNombre());
 			marcadorA.addMoneyWin(torneo.getPriceMoney());
@@ -447,6 +451,7 @@ public class PokerData {
 			marcadorB.addMoneyWin(torneo.getPriceMoney());
 
 		}
+		System.out.println("\033[0m");
 		marcadorA.addRondasN(rondasN);
 		marcadorB.addRondasN(rondasN);
 		

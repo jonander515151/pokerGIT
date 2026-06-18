@@ -66,14 +66,14 @@ public class Marcador {
 	}
 	
 	public void subMoneyWin(int moneyWin) {
-		this.moneyWin -= moneyWin;
+		this.moneyWin += moneyWin;
 	}
 
 	public void addMoneyLost(int moneyLost) {
 		this.moneyLost += moneyLost;
 	}
 	public void subMoneyLost(int moneyLost) {
-		this.moneyLost -= moneyLost;
+		this.moneyLost += moneyLost;
 	}
 	
 	public int getMoneyLost() {

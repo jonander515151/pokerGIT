@@ -73,6 +73,16 @@ public class MegaCore {
 			
 		}
 		
+		public static void listaEstadistica(ArrayList<Estadisticas> listaE) {
+
+			
+			for (Estadisticas e : listaE) {
+				System.out.println(e.getJugador());
+				System.out.println(e.toData());
+				MegaDash.mostrarGuions();
+			}
+			
+		}
 		
 		public static ArrayList<Estadisticas>  estadisticasListV2(ArrayList<Marcador> listaMarc) {
 			
@@ -141,17 +151,17 @@ public class MegaCore {
 						e.addPerder(m.getPerder());
 						e.addRondasN(m.getRondasN());
 						
-						if(m.getTipoTorneo().equals("EPT")) {
+						if(m.getTipoTorneo().equals("EPT") && m.getMoneyWin()>0) {
 							
 							e.addTipoEPT();
 							
 						}
-						else if(m.getTipoTorneo().equals("WPT")) {
+						else if(m.getTipoTorneo().equals("WPT") && m.getMoneyWin()>0) {
 							
 							e.addTipoWPT();
 							
 						}
-						else if(m.getTipoTorneo().equals("WPT")) {
+						else if(m.getTipoTorneo().equals("WSOP") && m.getMoneyWin()>0) {
 							
 							e.addTipoWSOP();
 							
@@ -162,6 +172,9 @@ public class MegaCore {
 					contadorPartidos++;
 				}
 			}
+			
+			Collections.sort(estadisticasL);
+			Collections.reverse(estadisticasL);
 			
 			System.out.println("partidos: "+contadorPartidos);
 

@@ -59,8 +59,8 @@ public class Torneo {
 
 	@Override
 	public String toString() {
-		return "Torneo [nombre=" + nombre + ", tipo=" + tipo + ", initialPoints=" + initialPoints + ", priceMoney="
-				+ priceMoney + ", entryCost=" + entryCost + "]";
+		return "Torneo [nombre=" + nombre + ", tipo=" + tipo + ", initialPoints=" + initialPoints/1000 + " K "  + ", priceMoney="
+				+ priceMoney/1000 + " K "  + ", entryCost=" + entryCost + "]";
 	}
 
 

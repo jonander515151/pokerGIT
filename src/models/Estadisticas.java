@@ -1,6 +1,6 @@
 package models;
 
-public class Estadisticas {
+public class Estadisticas implements Comparable<Estadisticas>{
 	
 	Jugadores jugador;
 	private int ganar;
@@ -163,7 +163,19 @@ public class Estadisticas {
 				+ tipoEPT + ", tipoWPT=" + tipoWPT + ", tipoWSOP=" + tipoWSOP + ", rondasN=" + rondasN + "]";
 	}
 	
-	
+	public String toData() {
+		return "ganar=" + ganar + ", perder=" + perder + ", empate=" + empate
+				+ ", descarte=" + descarte + ", moneyWin=" + moneyWin/1000000 + " M " + ", moneyLost=" + moneyLost/1000 + " K " + ", tipoEPT="
+				+ tipoEPT + ", tipoWPT=" + tipoWPT + ", tipoWSOP=" + tipoWSOP + ", rondasN=" + rondasN + "]";
+	}
+
+	@Override
+	public int compareTo(Estadisticas o) {
+		int diferencia = this.moneyWin-o.getMoneyWin();// TODO Auto-generated method stub
+		if(diferencia==0) 
+		{diferencia = this.moneyLost-o.getMoneyLost();}
+		return diferencia;
+	}
 	
 	
 	
